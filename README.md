@@ -2,6 +2,9 @@
 
 A Python script to export vulnerability findings data from Veracode using the Reporting REST API. This tool automatically handles date windowing, report generation, polling, and data normalization.
 
+Note: 
+> The Reporting API only returns findings updated within the last six months. Requests are filtered using `last_updated_start_date` and `last_updated_end_date`, and the start date cannot be more than six months in the past. Older findings that have not been updated during that window cannot be retrieved through this API.
+
 ## Overview
 
 This script pulls findings data from Veracode and exports it to both JSON (raw) and CSV (normalized) formats. It's designed to extract comprehensive vulnerability information including application details, CVE/CWE IDs, finding status, remediation timelines, and more.
